@@ -1,0 +1,49 @@
+.main_wrp {
+  margin-top: 2.5rem;
+}
+
+.item-list_wrp {
+  margin-top: 2rem;
+  min-height: 300px;
+}
+
+.item-list_border {
+  border: 2px solid gray;
+  padding: 1rem 1.5rem;
+  line-height: 2rem;
+  min-height: 300px;
+  position: relative;
+}
+
+.item-list {
+  padding: 1rem;
+  text-align: left;
+}
+
+.item-list__title {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  text-align: left;
+  border-bottom: 1px solid gray;
+  padding-bottom: 0.5rem;
+}
+
+.item__delete {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: -1px;
+  right: -1px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.item-list_border:hover .item__delete {
+  background: url(./close.svg) no-repeat 50%;
+  background-size: 75%;
+  border: 1px solid gray;
+  transition: opacity 0.3s;
+  opacity: 1;
+  cursor: pointer;
+}

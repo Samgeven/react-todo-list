@@ -1,0 +1,26 @@
+.item-list_add-wrp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.item-list_plus {
+  background: url(./plus.svg) no-repeat 50%;
+  background-size: 30%;
+  height: 100%;
+  cursor: pointer;
+  transition: background-size 0.2s;
+}
+
+.item-list_plus:hover {
+  background-size: 35%;
+  transition: background-size 0.2s;
+}
+
+.item-list__add-btn {
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
