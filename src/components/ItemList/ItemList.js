@@ -25,7 +25,7 @@ class ItemList extends React.Component {
   }
 
   componentDidMount() {
-    this.tl.from(this.itemWrp, 0.3, {scaleX:0.8, scaleY:0.8, opacity: 0});
+    this.tl.from(this.itemWrp, 0.3, {scaleX:0.8, scaleY:0.8, opacity: 0, delay: 0.1});
     this.tl.play();
   }
   

@@ -10,6 +10,8 @@ class App extends React.Component {
       notes: []
     }
 
+    this.card = null;
+
     this.addNote = this.addNote.bind(this);
     this.deleteNote = this.deleteNote.bind(this);
     this.addTask = this.addTask.bind(this);
@@ -41,6 +43,18 @@ class App extends React.Component {
       notes: newnotesList
     });
   }
+
+  componentDidMount() {
+    /*const storedState = localStorage.getItem('notes');
+    if (storedState !== null) {
+      const parsedState = JSON.parse(storedState);
+      this.setState({ notes: parsedState });
+    }*/
+  }
+
+  componentDidUpdate() {
+    // localStorage.setItem('notes', JSON.stringify(this.state.notes));
+  }
   
   render() {
     return (
@@ -59,7 +73,7 @@ class App extends React.Component {
               })
             }
             <AddItem notes={this.state.notes} 
-                     addNote={this.addNote} 
+                     addNote={this.addNote}
                      currentKey={this.state.notes.length === 0 ? 0 : this.state.notes[this.state.notes.length - 1].id + 1}>
             </AddItem>
           </div>
