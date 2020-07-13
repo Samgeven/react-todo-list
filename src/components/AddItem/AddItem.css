@@ -2,3 +2,9 @@
   height: 100%;
   min-height: 180px;
 }
+
+.item-list {
+  height: 250px;
+  overflow: auto;
+  padding-left: 1.25rem;
+}

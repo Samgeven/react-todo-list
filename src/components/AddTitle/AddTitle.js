@@ -5,7 +5,7 @@ class AddTitle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newTitle: ""
+      newTitle: "My note"
     }
 
     this.handleListsUpdate = this.handleListsUpdate.bind(this);
@@ -21,20 +21,32 @@ class AddTitle extends React.Component {
   handleListsUpdate() {
     const newItem = {
       title: this.state.newTitle,
-      id: this.props.currentKey
+      id: this.props.currentKey,
+      tasks: []
     };
     this.props.addNote(newItem);
     this.props.handlePlusClick();
   }
   
+  getRandomPlaceholder() {
+    const placeholders = ["books to read", "my dreams", "grocery stuff", "cool boardgames"];
+    const index = Math.floor(Math.random() * Math.floor(placeholders.length));
+    return placeholders[index];
+  }
 
   render() {
     if(this.props.active) {
       return (
         <div className="item-list_add-wrp">
           <p className="item-list__add-title">Add title:</p>
-          <input className="item-list__add-input" type="text" onChange={this.handleTitleChange} />
-          <button className="item-list__add-btn" onClick={this.handleListsUpdate}>Done</button>
+          <input className="item-list__add-input" 
+                 type="text" 
+                 onChange={this.handleTitleChange} 
+                 placeholder={`For example - ${this.getRandomPlaceholder()}`}/>
+          <button className="item-list__add-btn" 
+                  onClick={this.handleListsUpdate}>
+                    Done
+          </button>
         </div>
       )
     }
